@@ -10,3 +10,7 @@ For more information, check out the [SendBird](http://sendbird.com?source=https:
 
 ## Author's Note
 Interested in the progress of this project? Feel free to follow the repo for live updates! 
+
+If you need to get a hold of me regarding this project, feel free to either:
+- email me at me@jourdanb.com
+- tweet me @professorragna
