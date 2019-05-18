@@ -1,5 +1,5 @@
 # sendbird-python
-Python wrapper for the SendBird API, built via Stripe standards.
+Python wrapper for the SendBird API, built via Stripe code standards.
 
 ## SendBird? What is SendBird?
 
