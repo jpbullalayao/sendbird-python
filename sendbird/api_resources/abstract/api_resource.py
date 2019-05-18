@@ -3,6 +3,10 @@ import abc
 
 class APIResource:
     @classmethod
+    def retrieve(cls, id, api_token=None, **params):
+        pass
+
+    @classmethod
     def class_url(cls):
         if cls == APIResource:
             raise NotImplementedError(
@@ -13,4 +17,4 @@ class APIResource:
 
     @abc.abstractproperty
     def instance_url(self):
-    	raise NotImplementedError
+        raise NotImplementedError
