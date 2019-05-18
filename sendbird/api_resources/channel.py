@@ -10,4 +10,6 @@ class Channel(
     ListableAPIResource,
     UpdatableAPIResource
 ):
-    pass
+    @property
+    def instance_url(self):
+        pass

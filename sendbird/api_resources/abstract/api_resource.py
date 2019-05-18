@@ -1,3 +1,6 @@
+import abc
+
+
 class APIResource:
     @classmethod
     def class_url(cls):
@@ -8,5 +11,6 @@ class APIResource:
             )
         return '{resource_name}s'.format(resource_name=cls.RESOURCE_NAME)
 
+    @abc.abstractproperty
     def instance_url(self):
-    	pass
+    	raise NotImplementedError

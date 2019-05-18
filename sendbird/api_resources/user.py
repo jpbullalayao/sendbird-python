@@ -11,3 +11,7 @@ class User(
     UpdatableAPIResource
 ):
     RESOURCE_NAME = 'user'
+
+	@property
+    def instance_url(self):
+    	pass

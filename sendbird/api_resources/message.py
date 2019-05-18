@@ -11,3 +11,7 @@ class Message(
     UpdatableAPIResource
 ):
     RESOURCE_NAME = 'message'
+
+	@property
+    def instance_url(self):
+    	pass
