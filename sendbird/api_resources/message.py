@@ -5,9 +5,9 @@ from sendbird.api_resources.abstract.updatable_api_resource import UpdatableAPIR
 
 
 class Message(
-	CreateableAPIResource,
-	DeletableAPIResource,
-	ListableAPIResource,
-	UpdatableAPIResource
+    CreateableAPIResource,
+    DeletableAPIResource,
+    ListableAPIResource,
+    UpdatableAPIResource
 ):
     pass
