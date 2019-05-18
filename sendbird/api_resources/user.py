@@ -10,4 +10,4 @@ class User(
     ListableAPIResource,
     UpdatableAPIResource
 ):
-    pass
+    RESOURCE_NAME = 'user'

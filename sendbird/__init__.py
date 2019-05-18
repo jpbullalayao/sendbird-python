@@ -6,3 +6,4 @@ api_app_id = None
 api_base = "http://api-{app_id}.sendbird.com/v3/".format(
     app_id=api_app_id
 )
+

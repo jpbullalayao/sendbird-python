@@ -10,4 +10,4 @@ class Message(
     ListableAPIResource,
     UpdatableAPIResource
 ):
-    pass
+    RESOURCE_NAME = 'message'

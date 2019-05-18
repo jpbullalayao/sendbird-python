@@ -6,3 +6,4 @@ class APIResource:
                 "APIResource is an abstract class. You should perform "
                 "actions on its subclasses (e.g. Message)"
             )
+        return '{resource_name}s'.format(resource_name=cls.RESOURCE_NAME)
