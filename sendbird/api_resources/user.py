@@ -10,7 +10,9 @@ class User(
     ListableAPIResource,
     UpdatableAPIResource
 ):
-    RESOURCE_NAME = 'user'
+    RESOURCE_NAME = "user"
+	PK_FIELD	  = "{resource_name}_id".format(resource_name=User.RESOURCE_NAME)
+
 
 	@property
     def instance_url(self):

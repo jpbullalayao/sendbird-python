@@ -10,7 +10,8 @@ class Message(
     ListableAPIResource,
     UpdatableAPIResource
 ):
-    RESOURCE_NAME = 'message'
+    RESOURCE_NAME = "message"
+	PK_FIELD      = "{resource_name}_id".format(resource_name=Message.RESOURCE_NAME)
 
 	@property
     def instance_url(self):

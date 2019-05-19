@@ -1,9 +1,18 @@
 import abc
 
+from sendbird.http_methods import HTTP_METHOD_GET
+
 
 class APIResource:
     @classmethod
-    def retrieve(cls, id, api_token=None, **params):
+    def retrieve(cls, pk, api_token=None, **params):
+        instance = cls(pk, api_token, **params)
+        instance.refresh()
+        return instance
+
+    def refresh(self):
+        # self.refresh_from(self.instance_url())
+        # return self
         pass
 
     @classmethod
