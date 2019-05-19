@@ -22,9 +22,9 @@ class User(
         api_token=None,
         **params
     ):
-    	profile_url = params.get(cls.FIELD_PROFILE_URL, cls.DEFAULT_PROFILE_URL)
-    	params[cls.PROFILE_URL_FIELD] = profile_url
-    	super(User, cls).create(api_token=api_token, **params)
+        profile_url = params.get(cls.FIELD_PROFILE_URL, cls.DEFAULT_PROFILE_URL)
+        params[cls.FIELD_PROFILE_URL] = profile_url
+        return super(User, cls).create(api_token=api_token, **params)
 
     def instance_url(self):
         pk = self.get(self.FIELD_PK)
