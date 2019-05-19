@@ -1,6 +1,7 @@
 from sendbird.api_requestor import APIRequestor
 from sendbird.api_resources.abstract.api_resource import APIResource
 from sendbird.http_methods import HTTP_METHOD_PUT
+from sendbird.util import convert_to_sendbird_object
 
 
 class UpdatableAPIResource(APIResource):
@@ -14,4 +15,6 @@ class UpdatableAPIResource(APIResource):
     	)
 
     	url = self.instance_url()
-        return requestor.request(HTTP_METHOD_PUT, url, params)
+        response = requestor.request(HTTP_METHOD_PUT, url, params)
+        sendbird_object = convert_to_sendbird_object(response)
+        return sendbird_object

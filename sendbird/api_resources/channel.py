@@ -10,10 +10,10 @@ class Channel(
     ListableAPIResource,
     UpdatableAPIResource
 ):
-    PK_FIELD = "channel_url"
+    FIELD_PK = "channel_url"
 
     def instance_url(self):
-        pk = self.get(self.PK_FIELD)
+        pk = self.get(self.FIELD_PK)
 
         base = self.class_url()
         return "{base}/{pk}".format(

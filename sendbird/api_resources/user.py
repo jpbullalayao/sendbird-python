@@ -11,9 +11,9 @@ class User(
     UpdatableAPIResource
 ):
     RESOURCE_NAME = "user"
-    PK_FIELD = "user_id"
 
-    PROFILE_URL_FIELD = "profile_url"
+    FIELD_PK = "user_id"
+    FIELD_PROFILE_URL = "profile_url"
     DEFAULT_PROFILE_URL = ""
 
     @classmethod
@@ -22,12 +22,12 @@ class User(
         api_token=None,
         **params
     ):
-    	profile_url = params.get(cls.PROFILE_URL_FIELD, cls.DEFAULT_PROFILE_URL)
+    	profile_url = params.get(cls.FIELD_PROFILE_URL, cls.DEFAULT_PROFILE_URL)
     	params[cls.PROFILE_URL_FIELD] = profile_url
     	super(User, cls).create(api_token=api_token, **params)
 
     def instance_url(self):
-        pk = self.get(self.PK_FIELD)
+        pk = self.get(self.FIELD_PK)
 
         base = self.class_url()
         return "{base}/{pk}".format(

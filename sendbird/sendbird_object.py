@@ -18,7 +18,7 @@ class SendbirdObject(dict):
 
     @classmethod
     def get_pk_field(cls):
-        return cls.PK_FIELD
+        return cls.FIELD_PK
 
     def refresh_from(self, values):
         for k, v in values.iteritems():

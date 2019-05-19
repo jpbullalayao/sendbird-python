@@ -11,7 +11,7 @@ class Message(
     UpdatableAPIResource
 ):
     RESOURCE_NAME = "message"
-    PK_FIELD = "message_id"
+    FIELD_PK = "message_id"
 
     def instance_url(self):
         pass
