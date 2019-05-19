@@ -17,6 +17,7 @@ class User(
     DEFAULT_PROFILE_URL = ""
 
     ENDPOINT_MY_GROUP_CHANNELS = "/my_group_channels"
+    ENDPOINT_UNREAD_MESSAGE_COUNT = "/unread_message_count"
 
     @classmethod
     def create(
@@ -41,3 +42,6 @@ class User(
         url = self.instance_url() + User.ENDPOINT_MY_GROUP_CHANNELS
         return self.request(HTTP_METHOD_GET, url)
         
+    def unread_message_count(self):
+        url = self.instance_url() + User.ENDPOINT_UNREAD_MESSAGE_COUNT
+        return self.request(HTTP_METHOD_GET, url).get('unread_count')
