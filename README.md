@@ -26,6 +26,9 @@ channel.update(name="New Name")
 
 # List open channels
 sendbird.OpenChannel.list()
+
+# Delete open channel
+channel.delete()
 ```
 
 
