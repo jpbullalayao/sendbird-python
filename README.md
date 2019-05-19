@@ -19,7 +19,10 @@ sendbird.api_token = "..."
 sendbird.OpenChannel.list()
 
 # Retrieve open channel
-sendbird.OpenChannel.retrieve('channel_url_here')
+channel = sendbird.OpenChannel.retrieve('channel_url_here')
+
+# Update a channel
+channel.update(name="New Name Here")
 ```
 
 
