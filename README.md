@@ -15,14 +15,17 @@ For more information, check out the [SendBird](http://sendbird.com?source=https:
 import sendbird
 sendbird.api_token = "..."
 
-# List open channels
-sendbird.OpenChannel.list()
+# Create open channel
+sendbird.OpenChannel.create(name='Name of Channel', channel_url='name-of-channel')
 
 # Retrieve open channel
-channel = sendbird.OpenChannel.retrieve('channel_url_here')
+channel = sendbird.OpenChannel.retrieve('name-of-channel')
 
 # Update a channel
-channel.update(name="New Name Here")
+channel.update(name="New Name")
+
+# List open channels
+sendbird.OpenChannel.list()
 ```
 
 
