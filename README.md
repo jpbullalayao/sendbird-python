@@ -8,6 +8,21 @@ SendBird (YC W16) is a company that provides a powerful and flexible chat API th
 For more information, check out the [SendBird](http://sendbird.com?source=https://github.com/jpbullalayao/sendbird-python) home page.
 
 
+## Usage
+
+```python
+
+import sendbird
+sendbird.api_token = "..."
+
+# List open channels
+sendbird.OpenChannel.list()
+
+# Retrieve open channel
+sendbird.OpenChannel.retrieve('channel_url_here')
+```
+
+
 ## Author's Note
 Interested in the progress of this project? Feel free to follow the repo for live updates! 
 
