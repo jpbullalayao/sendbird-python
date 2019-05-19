@@ -29,11 +29,12 @@ class APIRequestor(object):
         method_to_use = getattr(requests, http_method.lower())
 
         # TODO: Handle other status codes besides 200
-        return method_to_use(abs_url, headers=headers, params=params)
+        return method_to_use(abs_url, headers=headers, json=params)
 
     def request_headers(self):
         headers = {
             "Api-Token": self.api_token,
+            "Content-Type": "application/json, charset=utf8",
         }
         return headers
 

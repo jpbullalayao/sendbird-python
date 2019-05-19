@@ -9,6 +9,6 @@ class DeletableAPIResource(APIResource):
             api_token
         )
         
-        url = self.instance_url
+        url = self.instance_url()
         return requestor.request(HTTP_METHOD_DELETE, url)
 
