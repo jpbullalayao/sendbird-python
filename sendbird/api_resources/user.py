@@ -11,9 +11,7 @@ class User(
     UpdatableAPIResource
 ):
     RESOURCE_NAME = "user"
-	PK_FIELD	  = "{resource_name}_id".format(resource_name=User.RESOURCE_NAME)
+    PK_FIELD = "user_id"
 
-
-	@property
     def instance_url(self):
-    	pass
+        pass

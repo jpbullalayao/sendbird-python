@@ -1,19 +1,27 @@
 import abc
 
+from sendbird.api_requestor import APIRequestor
 from sendbird.http_methods import HTTP_METHOD_GET
+from sendbird.sendbird_object import SendbirdObject
+from sendbird.util import convert_to_sendbird_object
 
 
-class APIResource:
+class APIResource(SendbirdObject):
     @classmethod
     def retrieve(cls, pk, api_token=None, **params):
+        requestor = APIRequestor(
+            api_token
+        )
+
         instance = cls(pk, api_token, **params)
-        instance.refresh()
+        instance.refresh(requestor)
         return instance
 
-    def refresh(self):
-        # self.refresh_from(self.instance_url())
-        # return self
-        pass
+    def refresh(self, requestor):
+        response = requestor.request(HTTP_METHOD_GET, self.instance_url())
+        sendbird_object = convert_to_sendbird_object(response)
+        self.refresh_from(sendbird_object)
+        return self
 
     @classmethod
     def class_url(cls):
@@ -22,8 +30,10 @@ class APIResource:
                 "APIResource is an abstract class. You should perform "
                 "actions on its subclasses (e.g. Message)"
             )
-        return '{resource_name}s'.format(resource_name=cls.RESOURCE_NAME)
+        return '{resource_name}s'.format(
+            resource_name=cls.RESOURCE_NAME
+        )
 
-    @abc.abstractproperty
+    @abc.abstractmethod
     def instance_url(self):
         raise NotImplementedError

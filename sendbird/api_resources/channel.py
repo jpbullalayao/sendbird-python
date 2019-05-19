@@ -10,8 +10,13 @@ class Channel(
     ListableAPIResource,
     UpdatableAPIResource
 ):
-	PK_FIELD = "channel_url"
+    PK_FIELD = "channel_url"
 
-    @property
     def instance_url(self):
-        pass
+        pk = self.get(self.PK_FIELD)
+
+        base = self.class_url()
+        return "{base}/{pk}".format(
+            base=base,
+            pk=pk
+        )
