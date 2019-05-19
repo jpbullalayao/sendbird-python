@@ -37,3 +37,11 @@ class APIResource(SendbirdObject):
     @abc.abstractmethod
     def instance_url(self):
         raise NotImplementedError
+
+    def request(self, method, url, params=None, headers=None):
+        requestor = APIRequestor(
+            self.api_token,
+        )
+        response = requestor.request(method, url, params)
+        sendbird_object = convert_to_sendbird_object(response)
+        return sendbird_object

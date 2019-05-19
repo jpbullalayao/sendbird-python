@@ -2,7 +2,7 @@ from sendbird.api_resources.abstract.createable_api_resource import CreateableAP
 from sendbird.api_resources.abstract.deletable_api_resource import DeletableAPIResource  # NOQA
 from sendbird.api_resources.abstract.listable_api_resource import ListableAPIResource  # NOQA
 from sendbird.api_resources.abstract.updatable_api_resource import UpdatableAPIResource  # NOQA
-
+from sendbird.http_methods import HTTP_METHOD_GET
 
 class User(
     CreateableAPIResource,
@@ -16,6 +16,8 @@ class User(
     FIELD_PROFILE_URL = "profile_url"
     DEFAULT_PROFILE_URL = ""
 
+    ENDPOINT_MY_GROUP_CHANNELS = "/my_group_channels"
+
     @classmethod
     def create(
         cls,
@@ -27,7 +29,7 @@ class User(
         return super(User, cls).create(api_token=api_token, **params)
 
     def instance_url(self):
-        pk = self.get(self.FIELD_PK)
+        pk = self.get(User.FIELD_PK)
 
         base = self.class_url()
         return "{base}/{pk}".format(
@@ -35,4 +37,7 @@ class User(
             pk=pk
         )
 
-
+    def list_group_channels(self):
+        url = self.instance_url() + User.ENDPOINT_MY_GROUP_CHANNELS
+        return self.request(HTTP_METHOD_GET, url)
+        

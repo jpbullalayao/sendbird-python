@@ -13,7 +13,7 @@ class Channel(
     FIELD_PK = "channel_url"
 
     def instance_url(self):
-        pk = self.get(self.FIELD_PK)
+        pk = self.get(Channel.FIELD_PK)
 
         base = self.class_url()
         return "{base}/{pk}".format(

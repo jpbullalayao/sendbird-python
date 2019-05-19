@@ -5,6 +5,8 @@ class SendbirdObject(dict):
     def __init__(self, pk, api_token=None, **params):
         super(SendbirdObject, self).__init__()
 
+        object.__setattr__(self, "api_token", api_token)
+
         if pk:
             pk_field = self.get_pk_field()
             self[pk_field] = pk
