@@ -4,6 +4,7 @@ from sendbird.api_resources.abstract.deletable_api_resource import DeletableAPIR
 from sendbird.api_resources.abstract.listable_api_resource import ListableAPIResource  # NOQA
 from sendbird.api_resources.abstract.updatable_api_resource import UpdatableAPIResource  # NOQA
 from sendbird.http_methods import HTTP_METHOD_GET
+from sendbird.http_methods import HTTP_METHOD_PUT
 
 
 class User(
@@ -47,3 +48,10 @@ class User(
     def unread_message_count(self):
         url = self.instance_url() + api_endpoints.USER_UNREAD_MESSAGE_COUNT
         return self.request(HTTP_METHOD_GET, url).get('unread_count')
+
+    def mark_all_messages_as_read(self):
+        url = self.instance_url() + api_endpoints.USER_MARK_AS_READ_ALL
+        params = {
+            "user_id": self.get(User.FIELD_PK),
+        }
+        return self.request(HTTP_METHOD_PUT, url, params=params)
