@@ -16,7 +16,7 @@ import sendbird
 sendbird.api_token = "..."
 
 # Create open channel
-sendbird.OpenChannel.create(name='Name of Channel', channel_url='name-of-channel')
+sendbird.OpenChannel.create(name='Name of Channel', channel_url='name_of_channel')
 
 # Retrieve open channel
 channel = sendbird.OpenChannel.retrieve('name-of-channel')
