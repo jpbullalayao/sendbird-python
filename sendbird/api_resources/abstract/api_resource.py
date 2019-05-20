@@ -1,7 +1,7 @@
 import abc
 
+from sendbird import http_methods
 from sendbird.api_requestor import APIRequestor
-from sendbird.http_methods import HTTP_METHOD_GET
 from sendbird.sendbird_object import SendbirdObject
 from sendbird.util import convert_to_sendbird_object
 
@@ -18,7 +18,7 @@ class APIResource(SendbirdObject):
         return instance
 
     def refresh(self, requestor):
-        response = requestor.request(HTTP_METHOD_GET, self.instance_url())
+        response = requestor.request(http_methods.HTTP_METHOD_GET, self.instance_url())
         sendbird_object = convert_to_sendbird_object(response)
         self.refresh_from(sendbird_object)
         return self

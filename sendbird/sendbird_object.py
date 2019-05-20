@@ -1,6 +1,3 @@
-import abc
-
-
 class SendbirdObject(dict):
     def __init__(self, pk, api_token=None, **params):
         super(SendbirdObject, self).__init__()
