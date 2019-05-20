@@ -19,9 +19,6 @@ class User(
     FIELD_PROFILE_URL = "profile_url"
     DEFAULT_PROFILE_URL = ""
 
-    ENDPOINT_MY_GROUP_CHANNELS = "/my_group_channels"
-    ENDPOINT_UNREAD_MESSAGE_COUNT = "/unread_message_count"
-
     @classmethod
     def create(
         cls,
@@ -49,7 +46,10 @@ class User(
         url = self.instance_url() + api_endpoints.USER_UNREAD_MESSAGE_COUNT
         return self.request(HTTP_METHOD_GET, url).get('unread_count')
 
-    def mark_all_messages_as_read(self, **params):
+    def unread_item_count(self, item_keys=None):
+        url = self.instance_url() + api_endpoints.USER_UNREAD_ITEM_COUNT
+        return self.request(HTTP_METHOD_GET, url, params=params)
+
+    def mark_all_messages_as_read(self, channel_urls=None):
         url = self.instance_url() + api_endpoints.USER_MARK_AS_READ_ALL
-        params["user_id"] = self.get(User.FIELD_PK)
         return self.request(HTTP_METHOD_PUT, url, params=params)
