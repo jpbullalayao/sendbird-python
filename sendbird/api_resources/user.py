@@ -49,9 +49,7 @@ class User(
         url = self.instance_url() + api_endpoints.USER_UNREAD_MESSAGE_COUNT
         return self.request(HTTP_METHOD_GET, url).get('unread_count')
 
-    def mark_all_messages_as_read(self):
+    def mark_all_messages_as_read(self, **params):
         url = self.instance_url() + api_endpoints.USER_MARK_AS_READ_ALL
-        params = {
-            "user_id": self.get(User.FIELD_PK),
-        }
+        params["user_id"] = self.get(User.FIELD_PK)
         return self.request(HTTP_METHOD_PUT, url, params=params)
