@@ -13,5 +13,5 @@ class ListableAPIResource(APIResource):
 
         url = cls.class_url()
         response = requestor.request(http_methods.HTTP_METHOD_GET, url)
-        sendbird_object = convert_to_sendbird_object(response)
+        sendbird_object = convert_to_sendbird_object(response, cls)
         return sendbird_object

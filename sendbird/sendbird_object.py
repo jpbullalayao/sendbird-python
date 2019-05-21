@@ -19,6 +19,12 @@ class SendbirdObject(dict):
     def get_pk_field(cls):
         return cls.FIELD_PK
 
+    @classmethod
+    def construct_from(cls, resp):
+        instance = cls(resp.get(cls.get_pk_field()))
+        instance.refresh_from(resp)
+        return instance
+
     def refresh_from(self, values):
         for k, v in values.iteritems():
             super(SendbirdObject, self).__setitem__(k, v)

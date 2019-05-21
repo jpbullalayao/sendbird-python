@@ -19,7 +19,7 @@ class APIResource(SendbirdObject):
 
     def refresh(self, requestor):
         response = requestor.request(http_methods.HTTP_METHOD_GET, self.instance_url())
-        sendbird_object = convert_to_sendbird_object(response)
+        sendbird_object = convert_to_sendbird_object(response, self.__class__)
         self.refresh_from(sendbird_object)
         return self
 
@@ -43,5 +43,5 @@ class APIResource(SendbirdObject):
             self.api_token,
         )
         response = requestor.request(method, url, params)
-        sendbird_object = convert_to_sendbird_object(response)
+        sendbird_object = convert_to_sendbird_object(response,  self.__class__)
         return sendbird_object

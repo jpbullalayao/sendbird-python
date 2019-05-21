@@ -12,6 +12,6 @@ class DeletableAPIResource(APIResource):
         
         url = self.instance_url()
         response = requestor.request(http_methods.HTTP_METHOD_DELETE, url)
-        sendbird_object = convert_to_sendbird_object(response)
+        sendbird_object = convert_to_sendbird_object(response, self.__class__)
         return sendbird_object
 
