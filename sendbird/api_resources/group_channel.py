@@ -14,9 +14,17 @@ class GroupChannel(Channel):
     		# TODO: Handle exception here
     		pass
 
-    	url = self.instance_url() + api_endpoints.GROUP_CHANNNEL_CHECK_IF_MEMBER
+    	url = self.instance_url() + api_endpoints.GROUP_CHANNEL_CHECK_IF_MEMBER
     	return self.request(http_methods.HTTP_METHOD_GET, url, params=params)
 
     def accept_invitation(self, **params):
     	url = self.instance_url() + api_endpoints.GROUP_CHANNEL_ACCEPT_INVITATION
+    	return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
+
+    def reject_invitation(self, **params):
+    	url = self.instance_url() + api_endpoints.GROUP_CHANNEL_REJECT_INVITATION
+    	return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
+
+    def join(self, **params):
+    	url = self.instance_url() + api_endpoints.GROUP_CHANNEL_JOIN
     	return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
