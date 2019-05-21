@@ -1,3 +1,4 @@
+from sendbird.api_endpoints.group_channel import GROUP_CHANNEL_ACCEPT_INVITATION  # NOQA
 from sendbird.api_endpoints.group_channel import GROUP_CHANNNEL_CHECK_IF_MEMBER  # NOQA
 from sendbird.api_endpoints.group_channel import GROUP_CHANNEL_LIST_MEMBERS  # NOQA
 
