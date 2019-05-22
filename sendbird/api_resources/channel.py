@@ -1,3 +1,5 @@
+from sendbird import api_endpoints
+from sendbird import http_methods
 from sendbird.api_resources.abstract.createable_api_resource import CreateableAPIResource  # NOQA
 from sendbird.api_resources.abstract.deletable_api_resource import DeletableAPIResource  # NOQA
 from sendbird.api_resources.abstract.listable_api_resource import ListableAPIResource  # NOQA
@@ -20,3 +22,10 @@ class Channel(
             base=base,
             pk=pk
         )
+
+    def freeze(self, freeze=False):
+        url = self.instance_url() + api_endpoints.CHANNEL_FREEZE
+        params = {
+            'freeze': freeze,
+        }
+        return self.request(http_methods.HTTP_METHOD_PUT, url)
