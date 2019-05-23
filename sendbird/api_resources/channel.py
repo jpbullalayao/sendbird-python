@@ -29,3 +29,11 @@ class Channel(
             'freeze': freeze,
         }
         return self.request(http_methods.HTTP_METHOD_PUT, url)
+
+    def ban_user(self, params=None):
+        url = self.instance_url() + api_endpoints.CHANNEL_BAN_USER
+        return self.request(http_methods.HTTP_METHOD_POST, url)
+
+
+    def unban_user(self, params=None):
+        pass

@@ -11,6 +11,7 @@ class GroupChannel(Channel):
 
     def check_if_member(self, **params):
         url = self.instance_url() + api_endpoints.GROUP_CHANNEL_CHECK_IF_MEMBER
+        # TODO: Add user_id to url
         return self.request(http_methods.HTTP_METHOD_GET, url, params=params)
 
     def accept_invitation(self, **params):
