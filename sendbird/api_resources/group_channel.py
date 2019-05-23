@@ -30,3 +30,6 @@ class GroupChannel(Channel):
         url = self.instance_url() + api_endpoints.GROUP_CHANNEL_LEAVE
         return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
 
+    def hide(self, **params):
+        url = self.instance_url() + api_endpoints.GROUP_CHANNEL_HIDE
+        return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
