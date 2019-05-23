@@ -54,3 +54,11 @@ class Channel(
     def list_banned_users(self, **params):
         url = self.instance_url() + api_endpoints.CHANNEL_LIST_BANNED_USERS
         return self.request(http_methods.HTTP_METHOD_GET, url, params=params)
+
+    def view_ban(self, **params):
+        banned_user_id = params.get('banned_user_id')
+        formatted_endpoint = api_endpoints.CHANNEL_VIEW_BAN.format(
+            banned_user_id=banned_user_id
+        )
+        url = self.instance_url() + formatted_endpoint
+        return self.request(http_methods.HTTP_METHOD_GET, url, params=params)
