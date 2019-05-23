@@ -30,12 +30,12 @@ class Channel(
         }
         return self.request(http_methods.HTTP_METHOD_PUT, url)
 
-    def ban_user(self, params=None):
+    def ban_user(self, **params):
         url = self.instance_url() + api_endpoints.CHANNEL_BAN_USER
         return self.request(http_methods.HTTP_METHOD_POST, url)
 
 
-    def unban_user(self, params=None):
+    def unban_user(self, **params):
         banned_user_id = params.get('banned_user_id')
         formatted_endpoint = api_endpoints.CHANNEL_UNBAN_USER.format(
             banned_user_id=banned_user_id
@@ -43,7 +43,7 @@ class Channel(
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_DELETE, url)
 
-    def update_ban(self, params=None):
+    def update_ban(self, **params):
         banned_user_id = params.get('banned_user_id')
         formatted_endpoint = api_endpoints.CHANNEL_UPDATE_BAN.format(
             banned_user_id=banned_user_id
