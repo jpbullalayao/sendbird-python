@@ -28,11 +28,11 @@ class Channel(
         params = {
             'freeze': freeze,
         }
-        return self.request(http_methods.HTTP_METHOD_PUT, url)
+        return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
 
     def ban_user(self, **params):
         url = self.instance_url() + api_endpoints.CHANNEL_BAN_USER
-        return self.request(http_methods.HTTP_METHOD_POST, url)
+        return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
 
 
     def unban_user(self, **params):
@@ -41,7 +41,7 @@ class Channel(
             banned_user_id=banned_user_id
         )
         url = self.instance_url() + formatted_endpoint
-        return self.request(http_methods.HTTP_METHOD_DELETE, url)
+        return self.request(http_methods.HTTP_METHOD_DELETE, url, params=params)
 
     def update_ban(self, **params):
         banned_user_id = params.get('banned_user_id')
@@ -49,4 +49,8 @@ class Channel(
             banned_user_id=banned_user_id
         )
         url = self.instance_url() + formatted_endpoint
-        return self.request(http_methods.HTTP_METHOD_PUT, url)
+        return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
+
+    def list_banned_users(self, **params):
+        url = self.instance_url() + api_endpoints.CHANNEL_LIST_BANNED_USERS
+        return self.request(http_methods.HTTP_METHOD_GET, url, params=params)
