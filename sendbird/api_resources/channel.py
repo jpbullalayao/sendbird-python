@@ -78,3 +78,11 @@ class Channel(
     def list_muted_users(self, **params):
         url = self.instance_url() + api_endpoints.CHANNEL_LIST_MUTED_USERS
         return self.request(http_methods.HTTP_METHOD_GET, url, params=params)
+
+    def view_mute(self, **params):
+        muted_user_id = params.get('muted_user_id')
+        formatted_endpoint = api_endpoints.CHANNEL_VIEW_MUTE.format(
+            muted_user_id=muted_user_id
+        )
+        url = self.instance_url() + formatted_endpoint
+        return self.request(http_methods.HTTP_METHOD_GET, url, params=params)    

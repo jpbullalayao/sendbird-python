@@ -7,6 +7,7 @@ from sendbird.api_endpoints.channel import CHANNEL_UNBAN_USER  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_UNMUTE_USER  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_UPDATE_BAN  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_VIEW_BAN  # NOQA
+from sendbird.api_endpoints.channel import CHANNEL_VIEW_MUTE  # NOQA
 
 from sendbird.api_endpoints.group_channel import GROUP_CHANNEL_ACCEPT_INVITATION  # NOQA
 from sendbird.api_endpoints.group_channel import GROUP_CHANNEL_CHECK_IF_MEMBER  # NOQA
