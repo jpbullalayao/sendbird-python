@@ -1,4 +1,5 @@
 from sendbird import api_endpoints
+from sendbird import http_methods
 from sendbird.api_resources.channel import Channel
 
 
@@ -10,9 +11,12 @@ class GroupChannel(Channel):
         return self.request(http_methods.HTTP_METHOD_GET, url)
 
     def check_if_member(self, **params):
-        url = self.instance_url() + api_endpoints.GROUP_CHANNEL_CHECK_IF_MEMBER
-        # TODO: Add user_id to url
-        return self.request(http_methods.HTTP_METHOD_GET, url, params=params)
+        user_id = params.get('user_id')
+        formatted_endpoint = api_endpoints.GROUP_CHANNEL_CHECK_IF_MEMBER.format(
+            user_id=user_id
+        )
+        url = self.instance_url() + formatted_endpoint
+        return self.request(http_methods.HTTP_METHOD_GET, url, params=params).is_member
 
     def accept_invitation(self, **params):
         url = self.instance_url() + api_endpoints.GROUP_CHANNEL_ACCEPT_INVITATION
