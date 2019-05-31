@@ -75,3 +75,6 @@ class Channel(
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_DELETE, url, params=params)
 
+    def list_muted_users(self, **params):
+        url = self.instance_url() + api_endpoints.CHANNEL_LIST_MUTED_USERS
+        return self.request(http_methods.HTTP_METHOD_GET, url, params=params)
