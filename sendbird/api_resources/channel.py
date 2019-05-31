@@ -62,3 +62,7 @@ class Channel(
         )
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_GET, url, params=params)
+
+    def mute(self, **params):
+        url = self.instance_url() + api_endpoints.CHANNEL_MUTE_USER
+        return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
