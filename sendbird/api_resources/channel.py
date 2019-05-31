@@ -63,6 +63,15 @@ class Channel(
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_GET, url, params=params)
 
-    def mute(self, **params):
+    def mute_user(self, **params):
         url = self.instance_url() + api_endpoints.CHANNEL_MUTE_USER
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
+
+    def unmute_user(self, **params):
+        muted_user_id = params.get('muted_user_id')
+        formatted_endpoint = api_endpoints.CHANNEL_UNMUTE_USER.format(
+            muted_user_id=muted_user_id
+        )
+        url = self.instance_url() + formatted_endpoint
+        return self.request(http_methods.HTTP_METHOD_DELETE, url, params=params)
+
