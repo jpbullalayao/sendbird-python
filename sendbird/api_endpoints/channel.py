@@ -12,5 +12,6 @@ CHANNEL_VIEW_BAN = "/ban/{banned_user_id}"
 CHANNEL_VIEW_MUTE = "/mute/{muted_user_id}"
 
 CHANNEL_SEND_MESSAGE = "/messages"
+CHANNEL_DELETE_MESSAGE = "/messages/{message_id}"
 CHANNEL_UPDATE_MESSAGE = "/messages/{message_id}"
 CHANNEL_VIEW_MESSAGE = "/messages/{message_id}"

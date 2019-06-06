@@ -114,3 +114,12 @@ class Channel(
 
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
+
+    # TODO: Convert usage to message.delete()
+    def delete_message(self, **params):
+        message_id = params.get('message_id')
+        formatted_endpoint = api_endpoints.CHANNEL_DELETE_MESSAGE.format(
+            message_id=message_id
+        )
+        url = self.instance_url() + formatted_endpoint
+        return self.request(http_methods.HTTP_METHOD_DELETE, url, params=params)
