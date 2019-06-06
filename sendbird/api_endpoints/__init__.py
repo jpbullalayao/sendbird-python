@@ -12,6 +12,7 @@ from sendbird.api_endpoints.channel import CHANNEL_VIEW_MUTE  # NOQA
 from sendbird.api_endpoints.group_channel import GROUP_CHANNEL_ACCEPT_INVITATION  # NOQA
 from sendbird.api_endpoints.group_channel import GROUP_CHANNEL_CHECK_IF_MEMBER  # NOQA
 from sendbird.api_endpoints.group_channel import GROUP_CHANNEL_HIDE  # NOQA
+from sendbird.api_endpoints.group_channel import GROUP_CHANNEL_INVITE_USERS  # NOQA
 from sendbird.api_endpoints.group_channel import GROUP_CHANNEL_JOIN  # NOQA
 from sendbird.api_endpoints.group_channel import GROUP_CHANNEL_LEAVE  # NOQA
 from sendbird.api_endpoints.group_channel import GROUP_CHANNEL_LIST_MEMBERS  # NOQA

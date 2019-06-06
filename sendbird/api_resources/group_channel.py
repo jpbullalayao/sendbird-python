@@ -45,3 +45,7 @@ class GroupChannel(Channel):
     def reset_chat_history(self, **params):
         url = self.instance_url() + api_endpoints.GROUP_CHANNEL_RESET_CHAT_HISTORY
         return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
+
+    def invite_users(self, **params):
+        url = self.instance_url() + api_endpoints.GROUP_CHANNEL_INVITE_USERS
+        return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
