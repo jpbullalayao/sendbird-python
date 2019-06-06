@@ -40,7 +40,7 @@ class GroupChannel(Channel):
 
     def unhide(self, **params):
         url = self.instance_url() + api_endpoints.GROUP_CHANNEL_UNHIDE
-        return self.request(http_methods.HTTP_METHOD_DELETE, params=params)
+        return self.request(http_methods.HTTP_METHOD_DELETE, url, params=params)
 
     def reset_chat_history(self, **params):
         url = self.instance_url() + api_endpoints.GROUP_CHANNEL_RESET_CHAT_HISTORY
