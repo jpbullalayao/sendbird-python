@@ -93,3 +93,12 @@ class Channel(
 
         url = self.instance_url() + api_endpoints.CHANNEL_SEND_MESSAGE
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
+
+    # TODO: Connvert to channel.messages.retrieve()
+    def view_message(self, **params):
+        message_id = params.get('message_id')
+        formatted_endpoint = api_endpoints.CHANNEL_VIEW_MESSAGE.format(
+            message_id=message_id
+        )
+        url = self.instance_url() + formatted_endpoint
+        return self.request(http_methods.HTTP_METHOD_GET, url, params=params)
