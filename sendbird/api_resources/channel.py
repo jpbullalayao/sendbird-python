@@ -86,3 +86,10 @@ class Channel(
         )
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_GET, url, params=params)    
+
+    # TODO: Convert to channel.messages.send()
+    def send_text_message(self, **params):
+        params['message_type'] = 'MESG'
+
+        url = self.instance_url() + api_endpoints.CHANNEL_SEND_MESSAGE
+        return self.request(http_methods.HTTP_METHOD_POST, url, params=params)

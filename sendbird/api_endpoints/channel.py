@@ -10,3 +10,5 @@ CHANNEL_UNMUTE_USER = "/mute/{muted_user_id}"
 CHANNEL_UPDATE_BAN = "/ban/{banned_user_id}"
 CHANNEL_VIEW_BAN = "/ban/{banned_user_id}"
 CHANNEL_VIEW_MUTE = "/mute/{muted_user_id}"
+
+CHANNEL_SEND_MESSAGE = "/messages"
