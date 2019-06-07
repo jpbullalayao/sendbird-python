@@ -133,3 +133,12 @@ class Channel(
     def view_message_count(self):
         url = self.instance_url() + api_endpoints.CHANNEL_VIEW_MESSAGE_COUNT
         return self.request(http_methods.HTTP_METHOD_GET, url).total
+
+    def view_unread_messages_count(self, **params):
+        url = self.instance_url() + api_endpoints.CHANNEL_VIEW_MEMBER_UNNREAD_COUNT
+
+        user_ids = params.get('user_ids')
+        if user_ids:
+            url += "?user_ids={user_ids}".format(user_ids=user_ids)
+
+        return self.request(http_methods.HTTP_METHOD_GET, url).unread
