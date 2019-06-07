@@ -128,3 +128,8 @@ class Channel(
         )
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_DELETE, url, params=params)
+
+    # TODO: Convert usage to channel.messages.count()
+    def view_message_count(self):
+        url = self.instance_url() + api_endpoints.CHANNEL_VIEW_MESSAGE_COUNT
+        return self.request(http_methods.HTTP_METHOD_GET, url).total
