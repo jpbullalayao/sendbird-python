@@ -13,6 +13,7 @@ CHANNEL_VIEW_MUTE = "/mute/{muted_user_id}"
 
 CHANNEL_DELETE_MESSAGE = "/messages/{message_id}"
 CHANNEL_LIST_MESSAGES = "/messages"
+CHANNEL_MARK_AS_READ = "/messages/mark_as_read"
 CHANNEL_SEND_MESSAGE = "/messages"
 CHANNEL_UPDATE_MESSAGE = "/messages/{message_id}"
 CHANNEL_VIEW_MEMBER_UNNREAD_COUNT = "/messages/unread_count"

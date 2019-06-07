@@ -5,6 +5,7 @@ from sendbird.api_endpoints.channel import CHANNEL_LIST_BANNED_USERS  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_LIST_MESSAGES  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_LIST_MUTED_USERS  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_SEND_MESSAGE  # NOQA
+from sendbird.api_endpoints.channel import CHANNEL_MARK_AS_READ  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_MUTE_USER  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_UNBAN_USER  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_UNMUTE_USER  # NOQA

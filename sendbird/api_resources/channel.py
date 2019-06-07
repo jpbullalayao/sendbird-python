@@ -142,3 +142,7 @@ class Channel(
             url += "?user_ids={user_ids}".format(user_ids=user_ids)
 
         return self.request(http_methods.HTTP_METHOD_GET, url).unread
+
+    def mark_as_read(self, **params):
+        url = self.instance_url() + api_endpoints.CHANNEL_MARK_AS_READ
+        return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
