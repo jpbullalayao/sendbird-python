@@ -53,3 +53,7 @@ class User(
     def mark_all_messages_as_read(self, params=None):
         url = self.instance_url() + api_endpoints.USER_MARK_AS_READ_ALL
         return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
+
+    def block(self, **params):
+        url = self.instance_url() + api_endpoints.USER_BLOCK
+        return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
