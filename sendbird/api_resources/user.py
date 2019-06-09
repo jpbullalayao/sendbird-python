@@ -126,3 +126,7 @@ class User(
     def update_push_preference(self, **params):
         url = self.instance_url() + api_endpoints.USER_UPDATE_PUSH_PREFERENCE
         return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
+
+    def reset_push_preference(self):
+        url = self.instance_url() + api_endpoints.USER_RESET_PUSH_PREFERENCE
+        return self.request(http_methods.HTTP_METHOD_DELETE, url)
