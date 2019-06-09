@@ -42,5 +42,6 @@ from sendbird.api_endpoints.user import USER_REMOVE_DEVICE_TOKEN_FROM_OWNER  # N
 from sendbird.api_endpoints.user import USER_UNBLOCK  # NOQA
 from sendbird.api_endpoints.user import USER_UNREAD_ITEM_COUNT  # NOQA
 from sendbird.api_endpoints.user import USER_UNREAD_MESSAGE_COUNT  # NOQA
+from sendbird.api_endpoints.user import USER_UPDATE_PUSH_PREFERENCE  # NOQA
 from sendbird.api_endpoints.user import USER_VIEW_DEVICE_TOKEN_OWNER  # NOQA
 from sendbird.api_endpoints.user import USER_VIEW_PUSH_PREFERENCE  # NOQA
