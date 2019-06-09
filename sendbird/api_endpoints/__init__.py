@@ -30,6 +30,7 @@ from sendbird.api_endpoints.group_channel import GROUP_CHANNEL_UNHIDE  # NOQA
 
 from sendbird.api_endpoints.open_channel import OPEN_CHANNEL_LIST_PARTICIPANTS  # NOQA
 
+from sendbird.api_endpoints.user import USER_ADD_DEVICE_TOKEN  # NOQA
 from sendbird.api_endpoints.user import USER_BLOCK  # NOQA
 from sendbird.api_endpoints.user import USER_LIST_BLOCKED_USERS  # NOQA
 from sendbird.api_endpoints.user import USER_MARK_AS_READ_ALL  # NOQA

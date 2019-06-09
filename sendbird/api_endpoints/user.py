@@ -1,4 +1,5 @@
 # All endpoint constants for the User resource
+USER_ADD_DEVICE_TOKEN = "/push/{token_type}"
 USER_BLOCK = "/block"
 USER_LIST_BLOCKED_USERS = "/block"
 USER_MARK_AS_READ_ALL = "/mark_as_read_all"
