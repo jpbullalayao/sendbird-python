@@ -61,3 +61,10 @@ class User(
     def list_blocked_users(self, **params):
         url = self.instance_url() + api_endpoints.USER_LIST_BLOCKED_USERS
         return self.request(http_methods.HTTP_METHOD_GET, url, params=params)
+
+    def unblock(self, target_id=None):
+        formatted_endpoint = api_endpoints.USER_UNBLOCK.format(
+            target_id=target_id
+        )
+        url = self.instance_url() + formatted_endpoint
+        return self.request(http_methods.HTTP_METHOD_DELETE, url)
