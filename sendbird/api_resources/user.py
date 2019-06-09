@@ -76,3 +76,10 @@ class User(
         )
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
+
+    def list_device_tokens(self, token_type=None):
+        formatted_endpoint = api_endpoints.USER_LIST_DEVICE_TOKENS.format(
+            token_type=token_type
+        )
+        url = self.instance_url() + formatted_endpoint
+        return self.request(http_methods.HTTP_METHOD_GET, url)

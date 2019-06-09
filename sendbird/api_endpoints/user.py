@@ -2,6 +2,7 @@
 USER_ADD_DEVICE_TOKEN = "/push/{token_type}"
 USER_BLOCK = "/block"
 USER_LIST_BLOCKED_USERS = "/block"
+USER_LIST_DEVICE_TOKENS = "/push/{token_type}"
 USER_MARK_AS_READ_ALL = "/mark_as_read_all"
 USER_MY_GROUP_CHANNELS = "/my_group_channels"
 USER_UNBLOCK = "/block/{target_id}"
