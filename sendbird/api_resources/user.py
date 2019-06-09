@@ -70,9 +70,8 @@ class User(
         return self.request(http_methods.HTTP_METHOD_DELETE, url)
 
     def add_device_token(self, **params):
-        token_type = params.get('token_type')
         formatted_endpoint = api_endpoints.USER_ADD_DEVICE_TOKEN.format(
-            token_type=token_type
+            token_type=params.get('token_type')
         )
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
@@ -85,15 +84,25 @@ class User(
         return self.request(http_methods.HTTP_METHOD_GET, url)
 
     def remove_device_token(self, **params):
-        token_type = params.get('token_type')
-        token = params.get('token')
         formatted_endpoint = api_endpoints.USER_REMOVE_DEVICE_TOKEN.format(
-            token_type=token_type,
-            token=token
+            token_type=params.get('token_type'),
+            token=params.get('token')
         )
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_DELETE, url)
 
     def remove_all_device_tokens(self):
         url = self.instance_url() + api_endpoints.USER_REMOVE_ALL_DEVICE_TOKENS
-        return self.request(http_methods.HTTP_METHOD_DELETE, url)                
+        return self.request(http_methods.HTTP_METHOD_DELETE, url)
+
+    @classmethod
+    def view_device_token_owner(cls, **params):
+        url = api_endpoints.USER_VIEW_DEVICE_TOKEN_OWNER.format(
+            token_type=params.get('token_type'),
+            token=params.get('token')
+        )
+
+        resp = User.static_request(http_methods.HTTP_METHOD_GET, url)
+        if hasattr(resp, 'error'):
+            return resp
+        return resp[0].user_id

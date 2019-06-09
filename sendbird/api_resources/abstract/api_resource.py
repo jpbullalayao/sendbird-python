@@ -1,4 +1,5 @@
 import abc
+import sendbird
 
 from sendbird import http_methods
 from sendbird.api_requestor import APIRequestor
@@ -37,6 +38,15 @@ class APIResource(SendbirdObject):
     @abc.abstractmethod
     def instance_url(self):
         raise NotImplementedError
+
+    @classmethod
+    def static_request(cls, method, url, api_token=None, params=None, headers=None):
+        requestor = APIRequestor(
+            api_token or sendbird.api_token
+        )
+        response = requestor.request(method, url, params)
+        sendbird_object = convert_to_sendbird_object(response,  cls)
+        return sendbird_object
 
     def request(self, method, url, params=None, headers=None):
         requestor = APIRequestor(

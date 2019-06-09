@@ -20,11 +20,13 @@ class APIRequestor(object):
         return resp
 
     def request_raw(self, http_method, url, params=None):
+        if url.startswith('/'):
+            url = url[1:]  # Removes slash
+
         abs_url = "{api_base}{url}".format(
             api_base=self.api_base,
             url=url
         )
-
         headers = self.request_headers()
         method_to_use = getattr(requests, http_method.lower())
 
