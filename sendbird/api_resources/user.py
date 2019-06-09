@@ -93,3 +93,7 @@ class User(
         )
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_DELETE, url)
+
+    def remove_all_device_tokens(self):
+        url = self.instance_url() + api_endpoints.USER_REMOVE_ALL_DEVICE_TOKENS
+        return self.request(http_methods.HTTP_METHOD_DELETE, url)                
