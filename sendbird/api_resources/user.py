@@ -57,3 +57,7 @@ class User(
     def block(self, **params):
         url = self.instance_url() + api_endpoints.USER_BLOCK
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
+
+    def list_blocked_users(self, **params):
+        url = self.instance_url() + api_endpoints.USER_LIST_BLOCKED_USERS
+        return self.request(http_methods.HTTP_METHOD_GET, url, params=params)
