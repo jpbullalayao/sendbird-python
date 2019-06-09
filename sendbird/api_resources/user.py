@@ -97,12 +97,24 @@ class User(
 
     @classmethod
     def view_device_token_owner(cls, **params):
-        url = api_endpoints.USER_VIEW_DEVICE_TOKEN_OWNER.format(
+        formatted_endpoint = api_endpoints.USER_VIEW_DEVICE_TOKEN_OWNER.format(
             token_type=params.get('token_type'),
             token=params.get('token')
         )
 
-        resp = User.static_request(http_methods.HTTP_METHOD_GET, url)
+        resp = User.static_request(http_methods.HTTP_METHOD_GET, formatted_endpoint)
+        if hasattr(resp, 'error'):
+            return resp
+        return resp[0].user_id
+
+    @classmethod
+    def remove_device_token_from_owner(self, **params):
+        formatted_endpoint = api_endpoints.USER_REMOVE_DEVICE_TOKEN_FROM_OWNER.format(
+            token_type=params.get('token_type'),
+            token=params.get('token')
+        )
+
+        resp = User.static_request(http_methods.HTTP_METHOD_DELETE, formatted_endpoint)
         if hasattr(resp, 'error'):
             return resp
         return resp[0].user_id
