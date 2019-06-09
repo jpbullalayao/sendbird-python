@@ -118,3 +118,7 @@ class User(
         if hasattr(resp, 'error'):
             return resp
         return resp[0].user_id
+
+    def view_push_preference(self):
+        url = self.instance_url() + api_endpoints.USER_VIEW_PUSH_PREFERENCE
+        return self.request(http_methods.HTTP_METHOD_GET, url)
