@@ -234,3 +234,10 @@ class User(
     def update_metadata(self, **params):
         url = self.instance_url() + api_endpoints.USER_UPDATE_METADATA
         return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
+
+    def delete_metadata(self, key=None):
+        url = self.instance_url() + api_endpoints.USER_DELETE_METADATA
+        if key:
+            url += '/{key}'.format(key=key)
+        return self.request(http_methods.HTTP_METHOD_DELETE, url)
+        

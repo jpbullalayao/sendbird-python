@@ -31,5 +31,6 @@ USER_VIEW_PUSH_PREFERENCE = "/push_preference"
 USER_VIEW_PUSH_PREFERENCE_FOR_CHANNEL = "/push_preference/{channel_url}"
 
 USER_CREATE_METADATA = "/metadata"
+USER_DELETE_METADATA = "/metadata"
 USER_UPDATE_METADATA = "/metadata"
 USER_VIEW_METADATA = "/metadata"

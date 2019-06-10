@@ -43,6 +43,7 @@ from sendbird.api_endpoints.user import USER_BAN_FROM_CHANNELS_WITH_CUSTOM_TYPES
 from sendbird.api_endpoints.user import USER_BLOCK  # NOQA
 from sendbird.api_endpoints.user import USER_CHOOSE_PUSH_MESSAGE_TEMPLATE  # NOQA
 from sendbird.api_endpoints.user import USER_CREATE_METADATA  # NOQA
+from sendbird.api_endpoints.user import USER_DELETE_METADATA  # NOQA
 from sendbird.api_endpoints.user import USER_LIST_BANNED_CHANNELS  # NOQA
 from sendbird.api_endpoints.user import USER_LIST_BLOCKED_USERS  # NOQA
 from sendbird.api_endpoints.user import USER_LIST_DEVICE_TOKENS  # NOQA
