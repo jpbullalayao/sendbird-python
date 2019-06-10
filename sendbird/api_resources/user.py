@@ -138,6 +138,17 @@ class User(
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_GET, url)
 
+    def update_push_preference_for_channel(self, **params):
+        formatted_endpoint = api_endpoints.USER_UPDATE_PUSH_PREFERENCE_FOR_CHANNEL.format(
+            channel_url=params.get('channel_url')
+        )
+
+        enable = params.get('enable', True)
+        params['enable'] = enable
+
+        url = self.instance_url() + formatted_endpoint
+        return self.request(http_methods.HTTP_METHOD_PUT, url, params)
+
     def list_muted_channels(self):
         url = self.instance_url() + api_endpoints.USER_LIST_MUTED_CHANNELS
         return self.request(http_methods.HTTP_METHOD_GET, url)
