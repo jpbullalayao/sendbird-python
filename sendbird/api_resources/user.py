@@ -212,3 +212,10 @@ class User(
             'channel_custom_types': channel_custom_types,
         }
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
+
+    def register_operator_channels_custom_types(self, channel_custom_types=[]):
+        url = self.instance_url() + api_endpoints.USER_REGISTER_OPERATOR_CHANNELS_CUSTOM_TYPES
+        params = {
+            'channel_custom_types': channel_custom_types,
+        }
+        return self.request(http_methods.HTTP_METHOD_POST, url, params=params)

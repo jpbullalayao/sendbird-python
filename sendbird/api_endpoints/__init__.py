@@ -41,6 +41,7 @@ from sendbird.api_endpoints.user import USER_LIST_MUTED_CHANNELS  # NOQA
 from sendbird.api_endpoints.user import USER_MARK_AS_READ_ALL  # NOQA
 from sendbird.api_endpoints.user import USER_MUTE_FROM_CHANNELS_WITH_CUSTOM_TYPES  # NOQA
 from sendbird.api_endpoints.user import USER_MY_GROUP_CHANNELS  # NOQA
+from sendbird.api_endpoints.user import USER_REGISTER_OPERATOR_CHANNELS_CUSTOM_TYPES  # NOQA
 from sendbird.api_endpoints.user import USER_REMOVE_ALL_DEVICE_TOKENS  # NOQA
 from sendbird.api_endpoints.user import USER_REMOVE_DEVICE_TOKEN  # NOQA
 from sendbird.api_endpoints.user import USER_REMOVE_DEVICE_TOKEN_FROM_OWNER  # NOQA
