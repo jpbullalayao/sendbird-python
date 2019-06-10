@@ -220,6 +220,10 @@ class User(
         }
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
 
+    def view_metadata(self):
+        url = self.instance_url() + api_endpoints.USER_VIEW_METADATA
+        return self.request(http_methods.HTTP_METHOD_GET, url)
+
     def create_metadata(self, metadata=None):
         url = self.instance_url() + api_endpoints.USER_CREATE_METADATA
         params = {
