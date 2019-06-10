@@ -141,4 +141,11 @@ class User(
 
     def view_channel_invite_preference(self):
         url = self.instance_url() + api_endpoints.USER_VIEW_CHANNEL_INVITE_PREFERENCE
-        return self.request(http_methods.HTTP_METHOD_GET, url)        
+        return self.request(http_methods.HTTP_METHOD_GET, url)
+
+    def update_channel_invite_preference(self, auto_accept=True):
+        url = self.instance_url() + api_endpoints.USER_UPDATE_CHANNEL_INVITE_PREFERENCE
+        params = {
+            'auto_accept': auto_accept,
+        }
+        return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
