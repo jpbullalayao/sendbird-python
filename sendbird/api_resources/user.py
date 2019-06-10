@@ -219,3 +219,10 @@ class User(
             'channel_custom_types': channel_custom_types,
         }
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
+
+    def create_metadata(self, metadata=None):
+        url = self.instance_url() + api_endpoints.USER_CREATE_METADATA
+        params = {
+            'metadata': metadata,
+        }
+        return self.request(http_methods.HTTP_METHOD_POST, url, params=params)

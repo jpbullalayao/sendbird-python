@@ -29,3 +29,5 @@ USER_VIEW_DEVICE_TOKEN_OWNER = "/push/device_tokens/{token_type}/{token}"
 USER_VIEW_GROUP_CHANNEL_COUNT_BY_JOIN_STATUS = "/group_channel_count"
 USER_VIEW_PUSH_PREFERENCE = "/push_preference"
 USER_VIEW_PUSH_PREFERENCE_FOR_CHANNEL = "/push_preference/{channel_url}"
+
+USER_CREATE_METADATA = "/metadata"
