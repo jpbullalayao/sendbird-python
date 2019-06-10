@@ -182,3 +182,9 @@ class Channel(
     def update_metacounter(self, **params):
         url = self.instance_url() + api_endpoints.CHANNEL_UPDATE_METACOUNTER
         return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
+
+    def delete_metacounter(self, key=None):
+        url = self.instance_url() + api_endpoints.CHANNEL_DELETE_METACOUNTER
+        if key:
+            url += '/{key}'.format(key=key)
+        return self.request(http_methods.HTTP_METHOD_DELETE, url)
