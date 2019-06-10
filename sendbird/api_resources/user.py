@@ -198,3 +198,10 @@ class User(
 
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_PUT, url, params=params).count_preference
+
+    def ban_from_channel_with_custom_types(self, channel_custom_types=[]):
+        url = self.instance_url() + api_endpoints.USER_BAN_FROM_CHANNELS_WITH_CUSTOM_TYPES
+        params = {
+            'channel_custom_types': channel_custom_types,
+        }
+        return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
