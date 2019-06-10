@@ -178,3 +178,7 @@ class Channel(
             'metacounter': metacounter,
         }
         return self.request(http_methods.HTTP_METHOD_POST, url, params)
+
+    def update_metacounter(self, **params):
+        url = self.instance_url() + api_endpoints.CHANNEL_UPDATE_METACOUNTER
+        return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)

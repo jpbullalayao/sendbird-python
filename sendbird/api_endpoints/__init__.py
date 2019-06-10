@@ -14,6 +14,7 @@ from sendbird.api_endpoints.channel import CHANNEL_UNBAN_USER  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_UNMUTE_USER  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_UPDATE_BAN  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_UPDATE_MESSAGE  # NOQA
+from sendbird.api_endpoints.channel import CHANNEL_UPDATE_METACOUNTER  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_UPDATE_METADATA  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_VIEW_BAN  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_VIEW_MUTE  # NOQA
