@@ -175,3 +175,8 @@ class User(
     def view_unread_channel_count(self, **params):
         url = self.instance_url() + api_endpoints.USER_UNREAD_CHANNEL_COUNT
         return self.request(http_methods.HTTP_METHOD_GET, url, params=params).unread_count
+
+    def view_group_channel_count_by_join_status(self, **params):
+        url = self.instance_url() + api_endpoints.USER_VIEW_GROUP_CHANNEL_COUNT_BY_JOIN_STATUS
+        return self.request(http_methods.HTTP_METHOD_GET, url, params=params).group_channel_count
+
