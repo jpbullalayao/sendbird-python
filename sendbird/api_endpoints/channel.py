@@ -21,5 +21,6 @@ CHANNEL_VIEW_MESSAGE = "/messages/{message_id}"
 CHANNEL_VIEW_MESSAGE_COUNT = "/messages/total_count"
 
 CHANNEL_CREATE_METADATA = "/metadata"
+CHANNEL_DELETE_METADATA = "/metadata"
 CHANNEL_UPDATE_METADATA = "/metadata"
 CHANNEL_VIEW_METADATA = "/metadata"

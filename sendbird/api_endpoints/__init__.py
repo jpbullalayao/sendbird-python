@@ -1,6 +1,7 @@
 from sendbird.api_endpoints.channel import CHANNEL_BAN_USER  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_CREATE_METADATA  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_DELETE_MESSAGE  # NOQA
+from sendbird.api_endpoints.channel import CHANNEL_DELETE_METADATA  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_FREEZE  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_LIST_BANNED_USERS  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_LIST_MESSAGES  # NOQA
