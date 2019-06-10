@@ -167,3 +167,10 @@ class Channel(
         if key:
             url += '/{key}'.format(key=key)
         return self.request(http_methods.HTTP_METHOD_DELETE, url)
+
+    def create_metacounter(self, metacounter=None):
+        url = self.instance_url() + api_endpoints.CHANNEL_CREATE_METACOUNTER
+        params = {
+            'metacounter': metacounter,
+        }
+        return self.request(http_methods.HTTP_METHOD_POST, url, params)
