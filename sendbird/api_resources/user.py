@@ -130,3 +130,7 @@ class User(
     def reset_push_preference(self):
         url = self.instance_url() + api_endpoints.USER_RESET_PUSH_PREFERENCE
         return self.request(http_methods.HTTP_METHOD_DELETE, url)
+
+    def list_muted_channels(self):
+        url = self.instance_url() + api_endpoints.USER_LIST_MUTED_CHANNELS
+        return self.request(http_methods.HTTP_METHOD_GET, url)
