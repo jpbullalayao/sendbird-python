@@ -32,6 +32,7 @@ from sendbird.api_endpoints.open_channel import OPEN_CHANNEL_LIST_PARTICIPANTS  
 
 from sendbird.api_endpoints.user import USER_ADD_DEVICE_TOKEN  # NOQA
 from sendbird.api_endpoints.user import USER_BLOCK  # NOQA
+from sendbird.api_endpoints.user import USER_LIST_BANNED_CHANNELS  # NOQA
 from sendbird.api_endpoints.user import USER_LIST_BLOCKED_USERS  # NOQA
 from sendbird.api_endpoints.user import USER_LIST_DEVICE_TOKENS  # NOQA
 from sendbird.api_endpoints.user import USER_LIST_MUTED_CHANNELS  # NOQA

@@ -134,3 +134,7 @@ class User(
     def list_muted_channels(self):
         url = self.instance_url() + api_endpoints.USER_LIST_MUTED_CHANNELS
         return self.request(http_methods.HTTP_METHOD_GET, url)
+
+    def list_banned_channels(self):
+        url = self.instance_url() + api_endpoints.USER_LIST_BANNED_CHANNELS
+        return self.request(http_methods.HTTP_METHOD_GET, url)
