@@ -1,3 +1,3 @@
-PUSH_TRIGGER_OPTION_ALL = 'all'
-PUSH_TRIGGER_OPTION_MENTION_ONLY = 'mention_only'
-PUSH_TRIGGER_OPTION_OFF = 'off'
+ALL = 'all'
+MENTION_ONLY = 'mention_only'
+OFF = 'off'

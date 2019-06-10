@@ -1,6 +1,7 @@
 # All endpoint constants for the User resource
 USER_ADD_DEVICE_TOKEN = "/push/{token_type}"
 USER_BLOCK = "/block"
+USER_CHOOSE_PUSH_MESSAGE_TEMPLATE = "/push/template"
 USER_LIST_BANNED_CHANNELS = "/ban"
 USER_LIST_BLOCKED_USERS = "/block"
 USER_LIST_DEVICE_TOKENS = "/push/{token_type}"

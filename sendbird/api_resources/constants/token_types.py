@@ -1,2 +1,2 @@
-TOKEN_TYPE_GCM = 'gcm'
-TOKEN_TYPE_APNS = 'apns'
+GCM = 'gcm'
+APNS = 'apns'

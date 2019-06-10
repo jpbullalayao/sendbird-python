@@ -167,3 +167,7 @@ class User(
             'auto_accept': auto_accept,
         }
         return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
+
+    def choose_push_message_template(self, **params):
+        url = self.instance_url() + api_endpoints.USER_CHOOSE_PUSH_MESSAGE_TEMPLATE
+        return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)

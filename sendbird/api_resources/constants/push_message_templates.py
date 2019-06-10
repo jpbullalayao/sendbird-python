@@ -1,0 +1,2 @@
+ALTERNATIVE = 'alternative'
+DEFAULT = 'default'
