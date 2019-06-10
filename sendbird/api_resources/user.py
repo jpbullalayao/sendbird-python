@@ -181,9 +181,20 @@ class User(
         url = self.instance_url() + api_endpoints.USER_VIEW_GROUP_CHANNEL_COUNT_BY_JOIN_STATUS
         return self.request(http_methods.HTTP_METHOD_GET, url, params=params).group_channel_count
 
-    def view_count_preferences_of_channel(self, channel_url=None):
+    def view_count_preference_of_channel(self, channel_url=None):
         formatted_endpoint = api_endpoints.USER_COUNT_PREFERENCE_OF_CHANNEL.format(
             channel_url=channel_url
         )
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_GET, url).count_preference
+
+    def update_count_preference_of_channel(self, **params):
+        formatted_endpoint = api_endpoints.USER_UPDATE_COUNT_PREFERENCE_OF_CHANNEL.format(
+            channel_url=params.get('channel_url')
+        )
+
+        count_preference = params.get('count_preference', unread_count_preferences.ALL)
+        params['count_preference'] = count_preference
+
+        url = self.instance_url() + formatted_endpoint
+        return self.request(http_methods.HTTP_METHOD_PUT, url, params=params).count_preference
