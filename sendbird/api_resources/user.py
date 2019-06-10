@@ -4,6 +4,7 @@ from sendbird.api_resources.abstract.createable_api_resource import CreateableAP
 from sendbird.api_resources.abstract.deletable_api_resource import DeletableAPIResource  # NOQA
 from sendbird.api_resources.abstract.listable_api_resource import ListableAPIResource  # NOQA
 from sendbird.api_resources.abstract.updatable_api_resource import UpdatableAPIResource  # NOQA
+from sendbird.api_resources.constants import unread_count_preferences
 
 
 class User(
@@ -180,3 +181,9 @@ class User(
         url = self.instance_url() + api_endpoints.USER_VIEW_GROUP_CHANNEL_COUNT_BY_JOIN_STATUS
         return self.request(http_methods.HTTP_METHOD_GET, url, params=params).group_channel_count
 
+    def view_count_preferences_of_channel(self, channel_url=None):
+        formatted_endpoint = api_endpoints.USER_COUNT_PREFERENCE_OF_CHANNEL.format(
+            channel_url=channel_url
+        )
+        url = self.instance_url() + formatted_endpoint
+        return self.request(http_methods.HTTP_METHOD_GET, url).count_preference

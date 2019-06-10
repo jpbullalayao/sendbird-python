@@ -51,6 +51,7 @@ from sendbird.api_endpoints.user import USER_UPDATE_CHANNEL_INVITE_PREFERENCE  #
 from sendbird.api_endpoints.user import USER_UPDATE_PUSH_PREFERENCE  # NOQA
 from sendbird.api_endpoints.user import USER_UPDATE_PUSH_PREFERENCE_FOR_CHANNEL  # NOQA
 from sendbird.api_endpoints.user import USER_VIEW_CHANNEL_INVITE_PREFERENCE  # NOQA
+from sendbird.api_endpoints.user import USER_COUNT_PREFERENCE_OF_CHANNEL  # NOQA
 from sendbird.api_endpoints.user import USER_VIEW_DEVICE_TOKEN_OWNER  # NOQA
 from sendbird.api_endpoints.user import USER_VIEW_GROUP_CHANNEL_COUNT_BY_JOIN_STATUS  # NOQA
 from sendbird.api_endpoints.user import USER_VIEW_PUSH_PREFERENCE  # NOQA
