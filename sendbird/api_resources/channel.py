@@ -146,3 +146,10 @@ class Channel(
     def mark_as_read(self, **params):
         url = self.instance_url() + api_endpoints.CHANNEL_MARK_AS_READ
         return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
+
+    def create_metadata(self, metadata=None):
+        url = self.instance_url() + api_endpoints.CHANNEL_CREATE_METADATA
+        params = {
+            'metadata': metadata,
+        }
+        return self.request(http_methods.HTTP_METHOD_POST, url, params=params)

@@ -19,3 +19,5 @@ CHANNEL_UPDATE_MESSAGE = "/messages/{message_id}"
 CHANNEL_VIEW_MEMBER_UNNREAD_COUNT = "/messages/unread_count"
 CHANNEL_VIEW_MESSAGE = "/messages/{message_id}"
 CHANNEL_VIEW_MESSAGE_COUNT = "/messages/total_count"
+
+CHANNEL_CREATE_METADATA = "/metadata"
