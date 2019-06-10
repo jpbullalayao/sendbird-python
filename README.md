@@ -31,6 +31,12 @@ sendbird.OpenChannel.list()
 channel.delete()
 ```
 
+The full list of resources that are available via the `sendbird` prefix are as follows:
+```
+GroupChannel
+OpenChannel
+User
+```
 
 ## Author's Note
 Interested in the progress of this project? Feel free to follow the repo for live updates! 
