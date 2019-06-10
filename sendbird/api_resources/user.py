@@ -205,3 +205,10 @@ class User(
             'channel_custom_types': channel_custom_types,
         }
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
+
+    def mute_from_channel_with_custom_types(self, channel_custom_types=[]):
+        url = self.instance_url() + api_endpoints.USER_MUTE_FROM_CHANNELS_WITH_CUSTOM_TYPES
+        params = {
+            'channel_custom_types': channel_custom_types,
+        }
+        return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
