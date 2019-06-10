@@ -20,6 +20,7 @@ from sendbird.api_endpoints.channel import CHANNEL_VIEW_MUTE  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_VIEW_MEMBER_UNNREAD_COUNT  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_VIEW_MESSAGE  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_VIEW_MESSAGE_COUNT  # NOQA
+from sendbird.api_endpoints.channel import CHANNEL_VIEW_METACOUNTER  # NOQA
 from sendbird.api_endpoints.channel import CHANNEL_VIEW_METADATA  # NOQA
 
 from sendbird.api_endpoints.group_channel import GROUP_CHANNEL_ACCEPT_INVITATION  # NOQA
