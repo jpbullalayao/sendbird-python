@@ -138,3 +138,7 @@ class User(
     def list_banned_channels(self):
         url = self.instance_url() + api_endpoints.USER_LIST_BANNED_CHANNELS
         return self.request(http_methods.HTTP_METHOD_GET, url)
+
+    def view_channel_invite_preference(self):
+        url = self.instance_url() + api_endpoints.USER_VIEW_CHANNEL_INVITE_PREFERENCE
+        return self.request(http_methods.HTTP_METHOD_GET, url)        
