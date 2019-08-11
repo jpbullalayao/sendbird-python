@@ -37,6 +37,8 @@ OpenChannel
 User
 ```
 
+Find more usage documentation at our [wiki](https://github.com/jpbullalayao/sendbird-python/wiki). Note, the documentation is still a work in progress!
+
 ## Setup
 
 You will need the `pip`, and the `requests` library installed on your machine in order to develop locally. One way to do this is to install a virtual environment that contains your `requests` package. To do this, see the instructions below. This assumes that you already have `pip` installed.
