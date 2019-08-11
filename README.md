@@ -7,7 +7,6 @@ SendBird (YC W16) is a company that provides a powerful and flexible chat API th
 
 For more information, check out the [SendBird](http://sendbird.com?source=https://github.com/jpbullalayao/sendbird-python) home page.
 
-
 ## Usage
 
 ```python
@@ -36,6 +35,18 @@ The full list of resources that are available via the `sendbird` prefix are as f
 GroupChannel
 OpenChannel
 User
+```
+
+## Setup
+
+You will need the `pip`, and the `requests` library installed on your machine in order to develop locally. One way to do this is to install a virtual environment that contains your `requests` package. To do this, see the instructions below. This assumes that you already have `pip` installed.
+
+```
+$ pip install --user virtualenv
+$ cd sendbird-python
+$ python -m venv sendbird-python
+$ source env/bin/activate
+$ pip install requests
 ```
 
 ## Author's Note
