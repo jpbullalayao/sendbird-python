@@ -20,7 +20,7 @@ class APIRequestor(object):
         return resp
 
     def request_raw(self, http_method, url, params=None):
-        if url.startswith('/'):
+        if url.startswith("/"):
             url = url[1:]  # Removes slash
 
         abs_url = "{api_base}{url}".format(

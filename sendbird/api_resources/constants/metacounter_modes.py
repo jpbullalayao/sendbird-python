@@ -1,3 +1,3 @@
-DECREASE = 'decrease'
-INCREASE = 'increase'
-SET = 'set'
+DECREASE = "decrease"
+INCREASE = "increase"
+SET = "set"

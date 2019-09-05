@@ -45,7 +45,7 @@ class User(
         
     def unread_message_count(self):
         url = self.instance_url() + api_endpoints.USER_UNREAD_MESSAGE_COUNT
-        return self.request(http_methods.HTTP_METHOD_GET, url).get('unread_count')
+        return self.request(http_methods.HTTP_METHOD_GET, url).get("unread_count")
 
     def unread_item_count(self, params=None):
         url = self.instance_url() + api_endpoints.USER_UNREAD_ITEM_COUNT
@@ -72,7 +72,7 @@ class User(
 
     def add_device_token(self, **params):
         formatted_endpoint = api_endpoints.USER_ADD_DEVICE_TOKEN.format(
-            token_type=params.get('token_type')
+            token_type=params.get("token_type")
         )
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
@@ -86,8 +86,8 @@ class User(
 
     def remove_device_token(self, **params):
         formatted_endpoint = api_endpoints.USER_REMOVE_DEVICE_TOKEN.format(
-            token_type=params.get('token_type'),
-            token=params.get('token')
+            token_type=params.get("token_type"),
+            token=params.get("token")
         )
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_DELETE, url)
@@ -99,24 +99,24 @@ class User(
     @classmethod
     def view_device_token_owner(cls, **params):
         formatted_endpoint = api_endpoints.USER_VIEW_DEVICE_TOKEN_OWNER.format(
-            token_type=params.get('token_type'),
-            token=params.get('token')
+            token_type=params.get("token_type"),
+            token=params.get("token")
         )
 
         resp = User.static_request(http_methods.HTTP_METHOD_GET, formatted_endpoint)
-        if hasattr(resp, 'error'):
+        if hasattr(resp, "error"):
             return resp
         return resp[0].user_id
 
     @classmethod
     def remove_device_token_from_owner(self, **params):
         formatted_endpoint = api_endpoints.USER_REMOVE_DEVICE_TOKEN_FROM_OWNER.format(
-            token_type=params.get('token_type'),
-            token=params.get('token')
+            token_type=params.get("token_type"),
+            token=params.get("token")
         )
 
         resp = User.static_request(http_methods.HTTP_METHOD_DELETE, formatted_endpoint)
-        if hasattr(resp, 'error'):
+        if hasattr(resp, "error"):
             return resp
         return resp[0].user_id
 
@@ -134,18 +134,18 @@ class User(
 
     def view_push_preference_for_channel(self, **params):
         formatted_endpoint = api_endpoints.USER_VIEW_PUSH_PREFERENCE_FOR_CHANNEL.format(
-            channel_url=params.get('channel_url')
+            channel_url=params.get("channel_url")
         )
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_GET, url)
 
     def update_push_preference_for_channel(self, **params):
         formatted_endpoint = api_endpoints.USER_UPDATE_PUSH_PREFERENCE_FOR_CHANNEL.format(
-            channel_url=params.get('channel_url')
+            channel_url=params.get("channel_url")
         )
 
-        enable = params.get('enable', True)
-        params['enable'] = enable
+        enable = params.get("enable", True)
+        params["enable"] = enable
 
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_PUT, url, params)
@@ -165,7 +165,7 @@ class User(
     def update_channel_invite_preference(self, auto_accept=True):
         url = self.instance_url() + api_endpoints.USER_UPDATE_CHANNEL_INVITE_PREFERENCE
         params = {
-            'auto_accept': auto_accept,
+            "auto_accept": auto_accept,
         }
         return self.request(http_methods.HTTP_METHOD_PUT, url, params=params)
 
@@ -190,11 +190,11 @@ class User(
 
     def update_count_preference_of_channel(self, **params):
         formatted_endpoint = api_endpoints.USER_UPDATE_COUNT_PREFERENCE_OF_CHANNEL.format(
-            channel_url=params.get('channel_url')
+            channel_url=params.get("channel_url")
         )
 
-        count_preference = params.get('count_preference', unread_count_preferences.ALL)
-        params['count_preference'] = count_preference
+        count_preference = params.get("count_preference", unread_count_preferences.ALL)
+        params["count_preference"] = count_preference
 
         url = self.instance_url() + formatted_endpoint
         return self.request(http_methods.HTTP_METHOD_PUT, url, params=params).count_preference
@@ -202,21 +202,21 @@ class User(
     def ban_from_channel_with_custom_types(self, channel_custom_types=[]):
         url = self.instance_url() + api_endpoints.USER_BAN_FROM_CHANNELS_WITH_CUSTOM_TYPES
         params = {
-            'channel_custom_types': channel_custom_types,
+            "channel_custom_types": channel_custom_types,
         }
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
 
     def mute_from_channel_with_custom_types(self, channel_custom_types=[]):
         url = self.instance_url() + api_endpoints.USER_MUTE_FROM_CHANNELS_WITH_CUSTOM_TYPES
         params = {
-            'channel_custom_types': channel_custom_types,
+            "channel_custom_types": channel_custom_types,
         }
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
 
     def register_operator_channels_custom_types(self, channel_custom_types=[]):
         url = self.instance_url() + api_endpoints.USER_REGISTER_OPERATOR_CHANNELS_CUSTOM_TYPES
         params = {
-            'channel_custom_types': channel_custom_types,
+            "channel_custom_types": channel_custom_types,
         }
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
 
@@ -227,7 +227,7 @@ class User(
     def create_metadata(self, metadata=None):
         url = self.instance_url() + api_endpoints.USER_CREATE_METADATA
         params = {
-            'metadata': metadata,
+            "metadata": metadata,
         }
         return self.request(http_methods.HTTP_METHOD_POST, url, params=params)
 
@@ -238,6 +238,6 @@ class User(
     def delete_metadata(self, key=None):
         url = self.instance_url() + api_endpoints.USER_DELETE_METADATA
         if key:
-            url += '/{key}'.format(key=key)
+            url += "/{key}".format(key=key)
         return self.request(http_methods.HTTP_METHOD_DELETE, url)
         

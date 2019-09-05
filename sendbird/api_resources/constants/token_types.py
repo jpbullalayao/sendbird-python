@@ -1,2 +1,2 @@
-GCM = 'gcm'
-APNS = 'apns'
+GCM = "gcm"
+APNS = "apns"
