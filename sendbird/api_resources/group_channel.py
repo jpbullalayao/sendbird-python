@@ -11,7 +11,7 @@ class GroupChannel(Channel):
         return self.request(http_methods.HTTP_METHOD_GET, url)
 
     def check_if_member(self, **params):
-        user_id = params.get('user_id')
+        user_id = params.get("user_id")
         formatted_endpoint = api_endpoints.GROUP_CHANNEL_CHECK_IF_MEMBER.format(
             user_id=user_id
         )

@@ -1,2 +1,2 @@
-ALTERNATIVE = 'alternative'
-DEFAULT = 'default'
+ALTERNATIVE = "alternative"
+DEFAULT = "default"

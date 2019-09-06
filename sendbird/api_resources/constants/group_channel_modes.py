@@ -1,3 +1,3 @@
-ALL = 'all'
-NONSUPER = 'nonsuper'
-SUPER = 'super'
+ALL = "all"
+NONSUPER = "nonsuper"
+SUPER = "super"
